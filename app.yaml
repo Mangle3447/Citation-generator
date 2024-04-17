@@ -1,1 +1,15 @@
-Valid YAML
+runtime: python3123
+
+entrypoint: gunicorn -b :$PORT app:app
+
+env: standard
+
+instance_class: F1  # Default instance class, adjust if needed
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 3
+
+handlers:
+- url: /.*
+  script: auto
