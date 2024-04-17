@@ -1,6 +1,6 @@
 runtime: python3123
 
-entrypoint: gunicorn -b :$PORT app:app
+entrypoint: gunicorn -p :8080 app:app
 
 env: standard
 
